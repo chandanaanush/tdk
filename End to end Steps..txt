@@ -1,0 +1,25 @@
+1. Create pipeline for the above business case to support end-end.
+
+STEP 1 -> Create Source and Destination S3 Buckets:
+
+Create two S3 buckets: one as the source bucket (tdk-test-1) and the other as the destination bucket (tdk-test-2).
+
+STEP 2 -> Loading Data from Dump to tdk-test-1
+
+STEP 3 -> AWS Lambda Function we can use it.
+It will trigger the Job and move to another Bucket.
+
+[ Using the Code Event & Copy.py ]
+Data is moved from tdk-test-1 TO tdk-test-2.
+
+STEP 4 -> ETL (Extract Transform Load ) Process,
+It will Extract the Data from tdk-test-2, transfer and then loaded to Oracle DB.
+
+By Above steps,we can set up an end-to-end pipeline using AWS services to copy data from one S3 bucket to another using a Lambda function triggered by AWS CodePipeline.
+
+STEP 5 -> Once the Data is loaded to Oracle DB using File name -> 'Oracle Query' we can check the following questions.
+- How many users are there?
+- every user has made how many requests.
+- Display total number of successful request.
+ 
+
