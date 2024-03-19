@@ -5,13 +5,13 @@ def lambda_handler(event, context):
     source_bucket = event['Records'][0]['s3']['bucket']['name']
     object_key = event['Records'][0]['s3']['object']['key']
 
-    # Specify the destination bucket
+    # We have specify the destination bucket...
     destination_bucket = 'tdk-test-2'
 
-    # Initialize the S3 client
+    # Initialize the S3 client...
     s3_client = boto3.client('s3')
 
-    # Copy object from source bucket to destination bucket
+    # Copying the object from source bucket to destination bucket
     copy_source = {
         'Bucket': source_bucket,
         'Key': object_key
@@ -25,7 +25,10 @@ def lambda_handler(event, context):
 
     print(f"Object '{object_key}' copied from '{source_bucket}' to '{destination_bucket}'.")
 
-    # Optional: You can return a response if needed
+
+
+    # You can also return a response if needed....
+    
     return {
         'statusCode': 200,
         'body': 'Copy job completed successfully.'
